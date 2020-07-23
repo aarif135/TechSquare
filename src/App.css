@@ -166,8 +166,8 @@ label{
   margin: 10px;
 }.style-input{
   padding: 10px;
-  border: solid black 1px;
-  border-radius: 10px;
+  border: solid black 2px;
+  border-radius: 08px;
   width: 100%;
   outline-style: none;
 }

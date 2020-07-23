@@ -1,5 +1,6 @@
 import React,{useEffect,useState} from 'react'
 import {getCart} from '../../Config'
+import NavBar from './Navbar'
 import Card from './Cards'
 import { Row, Col } from 'antd';
 
@@ -19,7 +20,8 @@ setData(arr)
 }
 console.log(Cart)
 
-return(
+return(<>
+<NavBar flag={true}/>
     <div className="row">
         {Cart.map((items)=>{
             return <div className="col-lg-4">
@@ -29,6 +31,7 @@ return(
         })}
 
     </div>
+    </>
 )
 }
 export default Cart

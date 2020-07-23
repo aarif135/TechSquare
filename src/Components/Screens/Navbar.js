@@ -1,5 +1,5 @@
 import React from 'react'
-import Logo from "../../Images/logo.jpg";
+import Logo from "../../Images/logo.png";
 import "../../App.css";
 import { withRouter } from "react-router";
 import {MenuOutlined } from '@ant-design/icons'
