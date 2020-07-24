@@ -51,4 +51,16 @@ async function getCart(){
     let AllCart =await Cart.get()
    return AllCart
 }
-export{ firebase,SetData,getAds,addedToCart,getCart}
+function checkOut(data){
+    firebase.firestore().collection('CheckOut').add(data).then(res=>{
+        firebase.firestore().collection('Cart').where('Ad_ID','==',data.id).get().then(res=>{
+            res.forEach(docs=>{
+                docs.ref.delete().then(res=>{
+                 
+                    alert("record")
+                })
+            })
+        })
+    })
+}
+export{ firebase,SetData,getAds,addedToCart,getCart,checkOut}

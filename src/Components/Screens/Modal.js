@@ -1,14 +1,37 @@
 import React,{useState} from 'react'
 import Modal from 'react-bootstrap/Modal'
 import Button from './Button'
+import {checkOut} from '../../Config'
 
 export default function Modals(props) {
     const [show, setShow] = useState(false);
+    const [name,setName]=useState('')
+    const [email,setEmail]=useState('')
+    const [address,setAddress]=useState('')
+    const [check,setCheck]=useState('')
   
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+  const handleChane=(key,value)=>{
+    if(key==='name'){
+      setName(value)
+    }
+    else if(key==='email'){
+      setEmail(value)
+    }
+    else if(key==="address"){
+      setAddress(value)
+    }
+    else{setCheck(value)}
+  }
+const checkOuts=()=>{
+  let id=props.Add_ID
+  let obj={name,email,address,check,id}
+
   
-    return (
+  checkOut(obj)
+}
+  return (
       <>
         <Button variant="primary" onClick={handleShow}>
         CHECK OUT
@@ -19,17 +42,18 @@ export default function Modals(props) {
             <Modal.Title > CHECK OUT</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-<h4 className="space">NAME:</h4>              <input placeholder="NAME" className='style-input  '  />
-<h4 className="space">EMAIL:</h4>              <input placeholder="EMAIL" className='style-input' />
-<h4 className="space">ADDRESS:</h4>              <input placeholder="ADDRESS" className='style-input' />
-<span style={{fontWeight:"bold"}}>Via Online</span> <input name='cash' type="radio"/>
+<h4 className="space">NAME:</h4>              <input placeholder="NAME" onChange={(e)=>handleChane("name",e.target.value)} className='style-input  '  />
+<h4 className="space">EMAIL:</h4>              <input placeholder="EMAIL" onChange={(e)=>handleChane("email",e.target.value)} className='style-input' />
+<h4 className="space">ADDRESS:</h4>              <input placeholder="ADDRESS" onChange={(e)=>handleChane("address",e.target.value)} className='style-input' />
+<span style={{fontWeight:"bold"}}>Via Online</span> <input value="online" name='cash' onChange={(e)=>handleChane("check",e.target.value)} type="radio"/>
 <br/>
-<span style={{fontWeight:"bold"}}>Cash On Delivery</span><input name="cash" type="radio"/>
+<span style={{fontWeight:"bold"}}>Cash On Delivery</span><input value="chash" name="cash" onChange={(e)=>handleChane("check",e.target.value)} type="radio"/>
+
 <h3>Quantity</h3><p style={{padding:"10px",border:'solid black 2px',borderRadius:"10px"}}>
     {props.quantity}
 </p>
 <div style={{display:"flex",justifyContent:"center",alignItems:'center'}}>
-    <button className="btn btn-success space">Check out</button>
+    <button onClick={checkOuts} className="btn btn-success space">Check out</button>
 </div>
 
           </Modal.Body>
