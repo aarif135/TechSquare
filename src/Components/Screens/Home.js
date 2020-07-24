@@ -5,6 +5,7 @@ import Cards from "../Screens/Cards";
 import { DownOutlined } from "@ant-design/icons";
 import Navbar from '../Screens/Navbar'
 import {getAds} from '../../Config'
+import Footer from '../Screens/Footer'
 
 
 
@@ -13,6 +14,8 @@ import {getAds} from '../../Config'
 
 const Home = (props) => {
   const [allData,setData]=useState([])
+  const [search,setSearch]=useState([])
+  const [flag,setFlag]=useState(false)
 
   useEffect( () => {
     getData()
@@ -29,7 +32,13 @@ array.push(docs.data())
   })
 setData(array)
 }
-console.log(allData)
+const handleSearch =(e)=>{
+  let searchValue= allData.filter(value=>{
+  return value.productName.includes(e.target.value)==true
+})
+ setSearch(searchValue)
+ setFlag(true)
+}
   return (
     <div style={{ overflow: "hidden" }}>
      <Navbar/>
@@ -63,7 +72,7 @@ console.log(allData)
             </ul>
           </div>
 
-          <input id="search" placeholder="What are you shoping for?" />
+          <input onChange={handleSearch} id="search" placeholder="What are you shoping for?" />
           <button id="search-button">Search</button>
         </div>
       </div>
@@ -73,16 +82,22 @@ console.log(allData)
         <hr/>
       </div>
       <div className='row'>
-        {allData.map((item,index)=>{
-        
-             return <div key={index} className='col-lg-3 col-md-4 col-sm-6 col-12'>
-             <Cards item={item}/>
+        { flag?search.map((item,index)=>{
+          return <div  className='col-lg-3 col-md-4 col-sm-6 col-12'>
+          <Cards key={index} item={item}/>
+        </div>
+        }):
+          allData.map((item,index)=>{
+
+           return   <div  className='col-lg-3 col-md-4 col-sm-6 col-12'>
+             <Cards key={index} item={item}/>
            </div>
-        })}
+          })
+        }
      
 
       </div>
- 
+ <Footer/>
       
     </div>
   );

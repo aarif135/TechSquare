@@ -34,13 +34,29 @@ storageRef.put(image).then(res=>{
     })
 })
    }
-   function addedToCart(item){
+  async function addedToCart(item){
+      console.log(item)
+     var flag=false
+      await firebase.firestore().collection('Cart').get().then(res=>{
+       res.forEach(docs=>{
+console.log("docs.data(",docs.data())
+         if(docs.data().Ad_ID==item.Ad_ID){
+             flag=true
+
+             console.log(flag)
+         }
+       })
+      })
+   if(!flag){
        firebase.firestore().collection('Cart').add(
            item
        ).then(()=>{
         
+        
     })
-
+       }else{
+           alert("already added to cart")
+       }
    }
     async  function getAds(){
 let ads=await firebase.firestore().collection('addData')

@@ -25,7 +25,8 @@ function Form(){
         
     }
     return(<div className='form-add'>
-        <div className='container-fluid form'>
+        <div className='container-fluid form row'>
+            <div className="col-lg-12 col-sm-12 col-12 col-md-12">
                 <div className='row' >
                     <div className='col-lg-12 col-sm-12 col-md-8 col-12 detail'>
                     <h1 style={{textAlign:'center',color:"white"}}>ADD DETAILS</h1>
@@ -74,7 +75,7 @@ style={{display:"flex",justifyContent:'center',marginTop:"4px"}}                
 
         </div>
         
-
+        </div>
     </div>)
 }
 export default Form

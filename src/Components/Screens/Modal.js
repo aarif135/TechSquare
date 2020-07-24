@@ -52,6 +52,12 @@ const checkOuts=()=>{
 <h3>Quantity</h3><p style={{padding:"10px",border:'solid black 2px',borderRadius:"10px"}}>
     {props.quantity}
 </p>
+<h3>Total price</h3><p style={{padding:"10px",border:'solid black 2px',borderRadius:"10px"}}>
+    {props.price*props.quantity}
+</p>
+
+
+
 <div style={{display:"flex",justifyContent:"center",alignItems:'center'}}>
     <button onClick={checkOuts} className="btn btn-success space">Check out</button>
 </div>

@@ -171,3 +171,16 @@ label{
   width: 100%;
   outline-style: none;
 }
+.main-footer{
+  background-color: black;
+  height: 20rem;
+}
+.name{color: white;}
+.footer-input{
+  border: solid white 1px;
+  background-color: transparent;
+  color: white;
+}
+::placeholder{
+  color: white;
+}

@@ -18,6 +18,7 @@ const Cards = (props) => {
 
         <div
           className="col-md-12 col-sm-12 col-lg-12 col-xs-12"
+ 
         >
           <div
             className="card text-center "
@@ -50,9 +51,9 @@ const Cards = (props) => {
               }}
               alt="profile "
             />
-            <p>{item.price}</p>
-          <div style={{display:'flex',justifyContent:'center',alignItems:"center",margin:'20px'}}>     
-              {props.btn?            <Modal Add_ID={props.item.Ad_ID} quantity={props.item.qunatity}/>:            <Button onClick={()=>{abc(item)}}>{props.btn?props.btn:'BUY NOW'}</Button>
+{    !props.btn?        <p>{item.price}</p>:''}          <div style={{display:'flex',justifyContent:'center',alignItems:"center",margin:'20px'}}>     
+              {props.btn?            <Modal Add_ID={props.item.Ad_ID} quantity={props.item.qunatity} price={item.price}/>:       
+                   <Button onClick={()=>{abc(item)}}>{props.btn?props.btn:'BUY NOW'}</Button>
 
 }
 </div>

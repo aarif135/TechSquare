@@ -9,9 +9,7 @@ const Navbar =(props)=>{
   const pushToDetail=()=>{
     props.history.push('/adminPanel')
   }
-  const abc=()=>{
 
-  }
     return(
         <div className="navbar navbar-expand-sm">
           <div className='navbar-brand'>        <img alt='LOGO' src={Logo} height="100" />
@@ -22,9 +20,9 @@ const Navbar =(props)=>{
          <div className='dropdown' style={{display:'inline'}}>
         <li className='dropdown-toggle nav-item nav-link ' id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">All categories</li>
         <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a className="dropdown-item" href='help'>Clothing</a>
-    <a className="dropdown-item" href='help'>Appliance</a>
-    <a className="dropdown-item" href='help'>Electronic</a>
+    <a className="dropdown-item" href='#'>Clothing</a>
+    <a className="dropdown-item" href='#'>Appliance</a>
+    <a className="dropdown-item" href='#'>Electronic</a>
   </ul>
   </div>
           <a href='#topDeals' style={{textDecoration:'none',color:'black'}}>

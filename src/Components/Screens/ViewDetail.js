@@ -9,14 +9,20 @@ import{addedToCart} from '../../Config'
 
 const ViewDetail=(props)=>{
     const [qunatity,setQuantity]=useState('')
+    const [counter,setCounter]=useState(1)
     const handleChange=(e)=>{
         setQuantity(e.target.value)
-        
+    setCounter(e.target.value)        
+    if(e.target.value>10){
+        setCounter(10)
+    }
+    else if(e.target.value<1){setCounter(1)}
+      
 
     }
   const  addToCart=(item)=>{
       
-      let obj={...item,qunatity}
+      let obj={...item,qunatity:counter}
       console.log(obj)
       addedToCart(obj)
 
@@ -40,9 +46,10 @@ return(
 <h1 style={{textAlign:'center'}}>{item.productName.toUpperCase()}</h1>
 <hr/>
 <h3 className='container'>{`Price:${item.price}`}</h3>
+<h3 className="container">{`Total price:${counter*item.price}x${counter}`}</h3>
 <hr/>
 <div style={{display:"flex",justifyContent:"center",alignItems:'center'}}>
-    <input onChange={handleChange} placeholder="Choose Quantity" className="form-control"  type='number'/>
+    <input  value={counter} onChange={handleChange} placeholder="Choose Quantity" className="form-control"  type='number'/>
     
 
 </div>
