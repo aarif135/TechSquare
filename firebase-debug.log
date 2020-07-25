@@ -1,0 +1,38 @@
+[debug] [2020-07-24T22:10:47.207Z] ----------------------------------------------------------------------
+[debug] [2020-07-24T22:10:47.211Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\areeb\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2020-07-24T22:10:47.211Z] CLI Version:   8.6.0
+[debug] [2020-07-24T22:10:47.212Z] Platform:      win32
+[debug] [2020-07-24T22:10:47.212Z] Node Version:  v14.6.0
+[debug] [2020-07-24T22:10:47.213Z] Time:          Sat Jul 25 2020 03:10:47 GMT+0500 (Pakistan Standard Time)
+[debug] [2020-07-24T22:10:47.213Z] ----------------------------------------------------------------------
+[debug] [2020-07-24T22:10:47.213Z] 
+[debug] [2020-07-24T22:10:47.224Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-07-24T22:10:47.225Z] > authorizing via signed-in user
+[debug] [2020-07-24T22:10:47.225Z] [iam] checking project techsquare-a301c for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2020-07-24T22:10:47.229Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/techsquare-a301c:testIamPermissions  
+ {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2020-07-24T22:10:49.120Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Fri, 24 Jul 2020 22:10:51 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=1174","alt-svc":"h3-29=\":443\"; ma=2592000,h3-27=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-07-24T22:10:49.124Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/techsquare-a301c  
+ 
+[debug] [2020-07-24T22:10:49.978Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Fri, 24 Jul 2020 22:10:52 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-27=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] 
+[info] === Deploying to 'techsquare-a301c'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2020-07-24T22:10:49.992Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/techsquare-a301c/versions  
+ {"config":{},"labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2020-07-24T22:10:52.093Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Fri, 24 Jul 2020 22:10:54 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-27=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] i  hosting[techsquare-a301c]: beginning deploy... 
+[info] i  hosting[techsquare-a301c]: found 21 files in build 
+[debug] [2020-07-24T22:10:52.127Z] [hosting] hash cache [YnVpbGQ] stored for 21 files
+[debug] [2020-07-24T22:10:52.127Z] [hosting][hash queue][FINAL] {"max":4,"min":1,"avg":1,"active":0,"complete":21,"success":21,"errored":0,"retried":0,"total":21,"elapsed":7}
+[debug] [2020-07-24T22:10:52.127Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/techsquare-a301c/versions/e6469deb99fa29dd:populateFiles  
+ <request body omitted>
+[debug] [2020-07-24T22:10:54.262Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Fri, 24 Jul 2020 22:10:56 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-27=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-07-24T22:10:54.285Z] [hosting][populate queue][FINAL] {"max":2143,"min":2143,"avg":2143,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":2160}
+[debug] [2020-07-24T22:10:54.287Z] [hosting] uploads queued: 2
+[debug] [2020-07-24T22:12:06.071Z] [uploadQueue] Retrying task 0722212b73804f1b9339db91c6d9ee39357c25a3221fb01fe39314c53aca7702
+[debug] [2020-07-24T22:13:12.608Z] [uploadQueue] Retrying task 0722212b73804f1b9339db91c6d9ee39357c25a3221fb01fe39314c53aca7702
+[debug] [2020-07-24T22:14:33.689Z] [uploadQueue] Retrying task 0722212b73804f1b9339db91c6d9ee39357c25a3221fb01fe39314c53aca7702
+[debug] [2020-07-24T22:15:18.456Z] [uploadQueue] Retrying task 29d97237df6a30f3c631a3bbce743b72e2aa585b72a6cc614904eaa59ba2846e
+[debug] [2020-07-24T22:15:32.040Z] [uploadQueue] Retrying task 0722212b73804f1b9339db91c6d9ee39357c25a3221fb01fe39314c53aca7702

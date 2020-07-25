@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 import '../../App.css'
 import {SetData} from '../../Config'
-function Form(){
+function Form(props){
     const [name,setName]=useState('')
     const [price,setPrice]=useState('')
     const [selectedValue,setValue]=useState('')
@@ -21,10 +21,12 @@ function Form(){
         }
     }
     const detailAdd=()=>{
-        SetData(name,price,selectedValue,productImg)
+        let Ad_ID=Date.now()
+        SetData(name,price,selectedValue,productImg,Ad_ID,props)
         
     }
-    return(<div className='form-add'>
+    return(<div className='form-add '>
+      
         <div className='container-fluid form row'>
             <div className="col-lg-12 col-sm-12 col-12 col-md-12">
                 <div className='row' >

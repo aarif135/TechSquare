@@ -30,7 +30,7 @@ const Navbar =(props)=>{
           </a>
           <li className='nav-item nav-link'>TOP PRODUCTS</li>
         </ul>
-        {!props.flag?        <button onClick={pushToDetail} className='btn btn-primary ml-auto' >Login</button>
+        {!props.flag?        <button onClick={pushToDetail} className='btn btn-primary ml-auto' >ADD ADVERTISMENT</button>
 
 :<ShoppingCartOutlined onClick={()=>{    props.history.push('/Cart')
 }} className="ml-auto" style={{fontSize:"40px",cursor:"pointer"}}/>}

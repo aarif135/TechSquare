@@ -1,6 +1,8 @@
 import "firebase/firestore";
 import * as firebase from "firebase/app";
 import 'firebase/storage';
+import swal from '@sweetalert/with-react'
+import React from 'react'
 
 const firebaseConfig = {
     apiKey: "AIzaSyAMvyQlN1VAdOxZNb4xYmX79ccEfkrBb-I",
@@ -13,7 +15,7 @@ const firebaseConfig = {
     measurementId: "G-ZV321W22B2"
   };
   firebase.initializeApp(firebaseConfig);
-  function SetData(productName,price,category,image){
+  function SetData(productName,price,category,image,Ad_ID,props){
 
  let fileType=image.type.split('')[0]
  let fileName=`techSquare_${Date.now()}`
@@ -23,13 +25,17 @@ const firebaseConfig = {
 storageRef.put(image).then(res=>{
     storageRef.getDownloadURL().then(url=>{
         const data={
+            Ad_ID,
             productName,price,category,url
         }
         firebase.firestore().collection('addData').add(
             data
         
         ).then(res=>{
-            console.log("data aded")
+            swal("YOUR IS BEINGLIVE NOW");
+            props.history.push('/')
+            
+
         })
     })
 })
@@ -51,7 +57,15 @@ console.log("docs.data(",docs.data())
        firebase.firestore().collection('Cart').add(
            item
        ).then(()=>{
-        
+        swal(
+            <div>
+              <h1>ADDED TO CART</h1>
+              <p>
+            Check Cart
+              </p>
+            </div>
+          )
+          
         
     })
        }else{
@@ -59,7 +73,7 @@ console.log("docs.data(",docs.data())
        }
    }
     async  function getAds(){
-let ads=await firebase.firestore().collection('addData')
+let ads=await firebase.firestore().collection('addData').limit(4)
 let data=await ads.get()
 return data}
 async function getCart(){

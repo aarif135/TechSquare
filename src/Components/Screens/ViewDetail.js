@@ -23,8 +23,9 @@ const ViewDetail=(props)=>{
   const  addToCart=(item)=>{
       
       let obj={...item,qunatity:counter}
-      console.log(obj)
-      addedToCart(obj)
+      addedToCart(obj).then(res=>{
+          props.history.push("/Cart")
+      })
 
     }
     

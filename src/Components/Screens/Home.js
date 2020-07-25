@@ -97,6 +97,7 @@ const handleSearch =(e)=>{
      
 
       </div>
+      <hr/>
  <Footer/>
       
     </div>
