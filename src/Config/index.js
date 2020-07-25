@@ -87,7 +87,11 @@ function checkOut(data){
             res.forEach(docs=>{
                 docs.ref.delete().then(res=>{
                  
-                    alert("record")
+                    swal({
+                        title: "YOUR RESPONSE HAS BEEN RECORED",
+                        text: "Thanks For Shopping",
+                        icon: "success",
+                      });
                 })
             })
         })

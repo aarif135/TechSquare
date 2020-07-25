@@ -30,6 +30,7 @@ const checkOuts=()=>{
 
   
   checkOut(obj)
+  setShow(false)
 }
   return (
       <>
