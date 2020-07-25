@@ -17,7 +17,7 @@ return (
 
     </div>
     <div className="col-lg-6 ">
-<img src={Logo} height="500px" width='500px'/>
+<img alt="logo" src={Logo} height="500px" width='500px'/>
     </div>
         </div>
         <div style={{background:"grey",width:'100%'}}>

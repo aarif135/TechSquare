@@ -34,7 +34,7 @@ setData(array)
 }
 const handleSearch =(e)=>{
   let searchValue= allData.filter(value=>{
-  return value.productName.includes(e.target.value)==true
+  return value.productName.includes(e.target.value)===true
 })
  setSearch(searchValue)
  setFlag(true)
@@ -76,9 +76,14 @@ const handleSearch =(e)=>{
           <button id="search-button">Search</button>
         </div>
       </div>
-      <div id='topDeals' className='fluid-container'>
+      <div   id='topDeals' >
         <hr/>
+      
         <h2>Top deals</h2>
+
+    
+      
+       
         <hr/>
       </div>
       <div className='row'>

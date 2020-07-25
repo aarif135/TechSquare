@@ -46,7 +46,7 @@ storageRef.put(image).then(res=>{
       await firebase.firestore().collection('Cart').get().then(res=>{
        res.forEach(docs=>{
 console.log("docs.data(",docs.data())
-         if(docs.data().Ad_ID==item.Ad_ID){
+         if(docs.data().Ad_ID===item.Ad_ID){
              flag=true
 
              console.log(flag)
@@ -73,7 +73,7 @@ console.log("docs.data(",docs.data())
        }
    }
     async  function getAds(){
-let ads=await firebase.firestore().collection('addData').limit(4)
+let ads=await firebase.firestore().collection('addData')
 let data=await ads.get()
 return data}
 async function getCart(){

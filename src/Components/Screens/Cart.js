@@ -2,7 +2,6 @@ import React,{useEffect,useState} from 'react'
 import {getCart} from '../../Config'
 import NavBar from './Navbar'
 import Card from './Cards'
-import { Row, Col } from 'antd';
 
 const Cart=()=>{
     const [Cart,setData]=useState([])

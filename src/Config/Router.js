@@ -9,7 +9,6 @@ import {
   import ViewDetail from '../Components/Screens/ViewDetail'
   import Form from '../Components/Screens/Form'
   import Cart from '../Components/Screens/Cart'
-  import Footer from '../Components/Screens/Footer'
 const Routers =(props)=>{
 return(  
 <Router>

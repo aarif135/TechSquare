@@ -1,6 +1,8 @@
 import React,{useState} from 'react'
 import '../../App.css'
 import {SetData} from '../../Config'
+import swal from '@sweetalert/with-react'
+
 function Form(props){
     const [name,setName]=useState('')
     const [price,setPrice]=useState('')
@@ -22,7 +24,11 @@ function Form(props){
     }
     const detailAdd=()=>{
         let Ad_ID=Date.now()
-        SetData(name,price,selectedValue,productImg,Ad_ID,props)
+        if(name&&price&&selectedValue&&productImg!=null){
+        SetData(name,price,selectedValue,productImg,Ad_ID,props)}
+        else{
+            swal("OOPS!", "Fill all the field", "error")
+        }
         
     }
     return(<div className='form-add '>

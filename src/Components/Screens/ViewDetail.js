@@ -1,6 +1,5 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import ViewCard from './CardsView'
-import Cars from '../../Images/car.jpg'
 import Button from './Button'
 import Navbar from '../Screens/Navbar'
 import { withRouter } from "react-router";
@@ -9,15 +8,17 @@ import {PlusSquareFilled,MinusSquareFilled  } from '@ant-design/icons'
 
 
 const ViewDetail=(props)=>{
-    const [qunatity,setQuantity]=useState('')
+    // const [qunatity,setQuantity]=useState('')
     const [counter,setCounter]=useState(1)
+            useEffect(()=>{
+                handleChange()
+            },[counter])
     const handleChange=(e)=>{
-        setQuantity(e.target.value)
-    setCounter(e.target.value)        
-    if(e.target.value>10){
+     
+    if(counter>10){
         setCounter(10)
     }
-    else if(e.target.value<1){setCounter(1)}
+    else if(counter<1){setCounter(1)}
       
 
     }

@@ -35,7 +35,7 @@ const checkOuts=()=>{
   checkOut(obj)
   setShow(false)
   }else{
-    swal("OOPS!", "You clicked the button!", "error")}
+    swal("OOPS!", "Fill all the field", "error")}
 
 }
   return (
