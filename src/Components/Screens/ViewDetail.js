@@ -5,6 +5,7 @@ import Button from './Button'
 import Navbar from '../Screens/Navbar'
 import { withRouter } from "react-router";
 import{addedToCart} from '../../Config'
+import {PlusSquareFilled,MinusSquareFilled  } from '@ant-design/icons'
 
 
 const ViewDetail=(props)=>{
@@ -49,10 +50,9 @@ return(
 <h3 className='container'>{`Price:${item.price}`}</h3>
 <h3 className="container">{`Total price:${counter*item.price}x${counter}`}</h3>
 <hr/>
-<div style={{display:"flex",justifyContent:"center",alignItems:'center'}}>
-    <input  value={counter} onChange={handleChange} placeholder="Choose Quantity" className="form-control"  type='number'/>
-    
-
+<div style={{display:"flex",justifyContent:"flex-start",alignItems:'center'}}>
+ <PlusSquareFilled style={{fontSize:"40px"}} onClick={()=>{setCounter(counter+1)}}/><h3 style={{marginLeft:"20px"}}>{counter}</h3>
+<MinusSquareFilled style={{fontSize:"40px",marginLeft:"20px"} } onClick={()=>{setCounter(counter-1)}}/>
 </div>
 <br/>
 

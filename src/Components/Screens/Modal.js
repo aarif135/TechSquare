@@ -2,6 +2,9 @@ import React,{useState} from 'react'
 import Modal from 'react-bootstrap/Modal'
 import Button from './Button'
 import {checkOut} from '../../Config'
+import swal from '@sweetalert/with-react'
+
+
 
 export default function Modals(props) {
     const [show, setShow] = useState(false);
@@ -27,10 +30,13 @@ export default function Modals(props) {
 const checkOuts=()=>{
   let id=props.Add_ID
   let obj={name,email,address,check,id}
+  if(name&&check&&email&&address!=null){
 
-  
   checkOut(obj)
   setShow(false)
+  }else{
+    swal("OOPS!", "You clicked the button!", "error")}
+
 }
   return (
       <>
