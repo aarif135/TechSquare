@@ -4,6 +4,7 @@ import "../../App.css";
 import { withRouter } from "react-router";
 import {MenuOutlined } from '@ant-design/icons'
 import {ShoppingCartOutlined } from '@ant-design/icons'
+import swal from 'sweetalert'
 
 const Navbar =(props)=>{
   const pushToDetail=()=>{
@@ -20,9 +21,12 @@ const Navbar =(props)=>{
          <div className='dropdown' style={{display:'inline'}}>
         <li className='dropdown-toggle nav-item nav-link ' id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">All categories</li>
         <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a className="dropdown-item" href='#'>Clothing</a>
-    <a className="dropdown-item" href='#'>Appliance</a>
-    <a className="dropdown-item" href='#'>Electronic</a>
+    <a className="dropdown-item" onClick={()=>{swal("This feature will avaliable soon"
+)}} href='#'>Clothing</a>
+    <a className="dropdown-item"  onClick={()=>{swal("This feature will avaliable soon"
+)}} href='#'>Appliance</a>
+    <a className="dropdown-item"  onClick={()=>{swal("This feature will avaliable soon"
+)}}    href='#'>Electronic</a>
   </ul>
   </div>
           <a href='#topDeals' style={{textDecoration:'none',color:'black'}}>

@@ -34,7 +34,7 @@ setData(array)
 }
 const handleSearch =(e)=>{
   let searchValue= allData.filter(value=>{
-  return value.productName.includes(e.target.value)===true
+  return value.productName.toLowerCase().includes(e.target.value.toLowerCase())===true
 })
  setSearch(searchValue)
  setFlag(true)
@@ -56,21 +56,7 @@ const handleSearch =(e)=>{
             justifyContent:'center',
           }}
         >
-          <div className="search-by">
-           
-            Search by
-            <DownOutlined style={{ fontSize: "16px", color: "black" }} />
-            <ul id="search-ul">
-              <li>Accessories</li>
-              <li>Mobile Phone</li>
-              <li>Property</li>
-              <li>Vehicles</li>
-              <li>Accessories</li>
-              <li>Mobile Phone</li>
-              <li>Property</li>
-              <li>Vehicles</li>
-            </ul>
-          </div>
+         
 
           <input onChange={handleSearch} id="search" placeholder="What are you shoping for?" />
           <button id="search-button">Search</button>
